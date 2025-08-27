@@ -8,7 +8,7 @@
         type="text"
         [(ngModel)]="filters.search"
         (ngModelChange)="onFiltersChange()"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
         placeholder="Buscar productos...">
     </div>
 
@@ -18,7 +18,7 @@
       <select
         [(ngModel)]="filters.category"
         (ngModelChange)="onFiltersChange()"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600">
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
         <option [ngValue]="null">Todas las categorías</option>
         @for (category of categories; track category.id) {
           <option [value]="category.id">
@@ -34,7 +34,7 @@
       <select
         [(ngModel)]="filters.warehouse"
         (ngModelChange)="onFiltersChange()"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600">
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
         <option [ngValue]="null">Todos los almacenes</option>
         @for (warehouse of warehouses; track warehouse.id) {
           <option [value]="warehouse.id">

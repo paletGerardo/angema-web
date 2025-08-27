@@ -800,6 +800,23 @@ export class StockinOrdersPage implements OnInit, OnDestroy, AfterViewInit {
   getStatusClasses(status: OrderStatus | string): string {
     return this.orderStatesService.getStatusClasses(status);
   }
+
+  getBorderColorClass(status: string): string {
+    switch (status) {
+      case 'total':
+        return 'border-l-blue-500';
+      case 'pending':
+        return 'border-l-red-500';
+      case 'preparing':
+        return 'border-l-yellow-500';
+      case 'prepared':
+        return 'border-l-green-500';
+      case 'dispatched':
+        return 'border-l-blue-300';
+      default:
+        return 'border-l-gray-500';
+    }
+  }
   
   private isKnownOrderStatus(status: string): status is OrderStatus {
     return ['pending', 'preparing', 'shipped', 'delivered', 'cancelled'].includes(status);

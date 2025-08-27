@@ -5,17 +5,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ThemeService {
-  private darkMode = new BehaviorSubject<boolean>(false);
+  private darkMode = new BehaviorSubject<boolean>(true); // Inicializar en true para modo oscuro por defecto
   darkMode$ = this.darkMode.asObservable();
 
   constructor() {
-    // Verificar preferencia guardada o preferencia del sistema
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      this.enableDarkMode();
-    }
+    // FORZAR MODO OSCURO SIEMPRE - ignorar localStorage
+    this.enableDarkMode();
   }
 
   toggleTheme(): void {

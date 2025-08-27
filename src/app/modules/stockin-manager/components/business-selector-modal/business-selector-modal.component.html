@@ -14,7 +14,7 @@
         @if (businesses$ | async; as businesses) {
           @for (business of businesses; track business.id) {
             <div
-              class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
+              class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 cursor-pointer hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
               [class.border-blue-500]="selectedBusinessId === business.id"
               [class.bg-blue-50]="selectedBusinessId === business.id"
               [ngClass]="selectedBusinessId === business.id ? 'dark:bg-blue-900/20' : ''"

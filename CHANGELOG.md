@@ -15,10 +15,32 @@ y este proyecto adhiere al [Versionado Semántico](https://semver.org/spec/v2.0.
   - **Funcionalidad completa**: Permite seleccionar negocio específico o "Ver Todos"
   - **Persistencia**: Selección se mantiene por 24 horas en sessionStorage
 
+- **Modo Oscuro por Defecto**: Configurado tema oscuro como predeterminado en toda la aplicación
+  - **Paleta de colores exacta**: Implementada según diseño de referencia con colores específicos
+  - **Fondo principal**: `#111827` (bg-dark-900) para máximo contraste
+  - **Superficies/Cards**: `#1F2937` (bg-dark-800) para elementos de contenido
+  - **Elementos UI**: `#374151` (bg-dark-700) para inputs, botones secundarios
+  - **Texto jerarquizado**: Blanco principal (#FFFFFF) y gris secundario (#9CA3AF)
+  - **Colores de acento**: Azul primario (#2563EB) y verde éxito (#16A34A)
+
 ### 🎨 Mejorado
 - **Experiencia de Usuario Root**: Navegación fluida entre dashboard y órdenes sin pérdida de contexto
 - **Consistencia de Sistema**: Modal reutilizable con mismo comportamiento en todas las páginas principales
 - **Flujo de Trabajo**: Usuarios root pueden cambiar contexto de negocio desde la nueva página de inicio
+
+- **Navbar Rediseñada**: Actualizada para coincidir exactamente con el diseño de referencia
+  - **Icono verde distintivo**: Agregado icono verde con número "9" en esquina superior izquierda
+  - **Botones Root Admin/Firebase Monitor**: Actualizados con fondo rojo y texto blanco
+  - **Avatar de usuario**: Rediseñado con fondo rojo y letra "A" blanca
+  - **Fondo oscuro**: Header con fondo `#111827` para integración perfecta
+  - **Elementos interactivos**: Todos los dropdowns y botones con estilos de modo oscuro
+
+- **Página de Órdenes Optimizada**: Aplicados estilos de modo oscuro en todos los elementos
+  - **Cards de estadísticas**: Fondo oscuro `#1F2937` con bordes `#374151`
+  - **Formularios e inputs**: Fondo `#374151` con texto blanco y placeholders grises
+  - **Tablas**: Headers, filas y hover states con colores oscuros apropiados
+  - **Modales**: Fondo oscuro con bordes y textos jerarquizados
+  - **Estados vacíos**: Íconos y textos adaptados al tema oscuro
 
 ### 🔧 Técnico
 - **Archivos Modificados**:

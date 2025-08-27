@@ -25,13 +25,13 @@
             </svg>
           </div>
           <div class="ml-3 w-0 flex-1 pt-0.5">
-            <p class="text-sm font-medium text-gray-900">
+            <p class="text-sm font-medium text-gray-900 dark:text-white">
               {{ notification.message }}
             </p>
           </div>
           <div class="ml-4 flex-shrink-0 flex">
             <button 
-              class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              class="bg-white dark:bg-gray-700 rounded-md inline-flex text-gray-400 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               (click)="removeNotification(notification.id)"
             >
               <span class="sr-only">Close</span>

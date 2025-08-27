@@ -1,4 +1,4 @@
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-dark-900 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-8">
     <div>
       <div class="mx-auto h-16 w-16 bg-primary-600 rounded-full flex items-center justify-center">
@@ -6,10 +6,10 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10"></path>
         </svg>
       </div>
-      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
         StockIn-Manager
       </h2>
-      <p class="mt-2 text-center text-sm text-gray-600">
+      <p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
         Ingresa a tu cuenta para gestionar tu inventario
       </p>
     </div>
@@ -17,7 +17,7 @@
     <form class="mt-8 space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="space-y-4">
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700">
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Email
           </label>
           <input
@@ -27,7 +27,7 @@
             formControlName="email"
             autocomplete="email"
             required
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
             placeholder="tu@email.com"
           >
           @if (getErrorMessage('email')) {
@@ -38,7 +38,7 @@
         </div>
 
         <div>
-          <label for="password" class="block text-sm font-medium text-gray-700">
+          <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Contraseña
           </label>
           <div class="mt-1 relative">
@@ -158,7 +158,7 @@
               formControlName="email"
               autocomplete="email"
               required
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               placeholder="tu@email.com"
             >
             @if (getErrorMessage('email', 'forgotPassword')) {

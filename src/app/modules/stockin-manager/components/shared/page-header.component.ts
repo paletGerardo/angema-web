@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface PageHeaderAction {
@@ -14,11 +14,11 @@ export interface PageHeaderAction {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+    <div class="dark:bg-gray-800 bg-white rounded-lg shadow-sm p-6 mb-6">
       <div class="flex justify-between items-center">
         <div>
-          <h1 class="text-2xl font-bold text-gray-900">{{ title }}</h1>
-          <p class="text-gray-600 mt-1">{{ subtitle }}</p>
+          <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ title }}</h1>
+          <p class="text-gray-600 dark:text-gray-300 mt-1">{{ subtitle }}</p>
         </div>
 
         <div class="flex gap-3">
@@ -47,7 +47,7 @@ export class PageHeaderComponent {
 
   getButtonClasses(color: string): string {
     const baseClasses = 'inline-flex items-center px-4 py-2 text-white text-sm font-medium rounded-lg focus:ring-4 transition-colors';
-    
+
     const colorClasses = {
       blue: 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-300',
       green: 'bg-green-600 hover:bg-green-700 focus:ring-green-300',
