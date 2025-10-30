@@ -1,0 +1,59 @@
+<!-- Header/Navbar -->
+<nav class="bg-white shadow-sm border-b">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <a href="/home" class="text-2xl font-bold text-gray-900">Angema</a>
+        <span class="ml-4 text-gray-500">JSON Entity Relationship Viewer</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="/home" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+          ← Volver al Inicio
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- JSON Viewer Application -->
+<div class="json-viewer-app">
+  <div class="toolbar">
+    <button id="center-view">Center View</button>
+    <button id="toggle-theme">Toggle Theme</button>
+  </div>
+
+  <button id="toggle-panel">✕</button>
+  <div id="left-panel">
+    <div class="panel-content">
+      <h3>JSON Input</h3>
+      <textarea id="json-input" placeholder="Paste your JSON here..."></textarea>
+      <button id="generate">Generate Diagram</button>
+    </div>
+    <div class="resize-handle"></div>
+  </div>
+
+  <div id="right-panel">
+    <div class="panel-content">
+      <h3>Selected Node</h3>
+      <pre id="selected-json"></pre>
+    </div>
+    <div class="resize-handle"></div>
+  </div>
+
+  <button id="toggle-right-panel">→</button>
+
+  <div id="workspace">
+    <!-- Contenedor global que agrupa diagram y flechas -->
+    <div id="global-container">
+      <div id="diagram">
+        <svg id="arrows" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="var(--arrow-color)"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,152 @@ Todos los cambios importantes de este proyecto serán documentados en este archi
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 y este proyecto adhiere al [Versionado Semántico](https://semver.org/spec/v2.0.0.html).
 
+## [v.0.12.0] - 2025-10-30
+
+### ✨ Agregado
+- **Nuevo Componente JSON Viewer**: Herramienta interactiva para visualizar estructuras JSON complejas
+  - Visualización gráfica tipo diagrama de entidad-relación
+  - Panel de entrada JSON con resaltado de sintaxis y formato de colores
+  - Panel de detalles para mostrar contenido completo de nodos seleccionados
+  - Conexiones visuales automáticas entre objetos anidados con flechas SVG
+  - Funcionalidades de zoom con rueda del mouse y Ctrl para desplazamiento vertical
+  - Pan/arrastre del workspace completo con mouse
+  - Nodos arrastrables individualmente para reposicionar el diagrama
+  - Capacidad de expandir/colapsar objetos anidados con botones +/-
+  - Centrado automático de vista con botón dedicado
+  - Temas claro/oscuro intercambiables
+  - Paneles laterales redimensionables (entrada y detalles)
+  - JSON de ejemplo precargado para demostración inmediata
+  - Ruta accesible en `/json-viewer`
+
+- **Nueva Página de Inicio Corporativa**: Rediseño completo de la landing page
+  - Hero section con gradiente moderno y CTAs claros
+  - Sección de servicios destacando Business Intelligence, Desarrollo Personalizado y Gestión Hotelera
+  - Sección de aplicaciones disponibles con tarjetas interactivas
+  - Tarjeta de "Control de Stock" (StockIn Manager) con acceso directo
+  - Tarjeta de "JSON Viewer" con acceso a la nueva herramienta
+  - Tarjeta de "Próximamente" para futuras herramientas
+  - Sección de contacto integrada
+  - Footer corporativo con navegación
+  - Diseño completamente responsive con Tailwind CSS
+  - Navegación simplificada con acceso directo a aplicaciones
+
+### 🔄 Cambiado
+- **Rutas de la Aplicación**: Reorganización del routing principal
+  - Ruta raíz (`/`) ahora muestra la página de inicio corporativa en lugar de redirigir a login
+  - Eliminada redirección automática de `/` a `/app/login`
+  - Ruta `/json-viewer` agregada para acceso directo a la herramienta
+  - Experiencia de usuario mejorada con landing page como punto de entrada
+
+- **Componente Home Simplificado**: Refactorización del componente principal
+  - Removidas dependencias de NavbarComponent, BotonesComponent, ContactoComponent y FooterComponent
+  - Template rediseñado desde cero con HTML/CSS moderno
+  - Código más limpio y mantenible con menos dependencias
+  - Mejor performance al reducir componentes anidados
+
+### 🔧 Actualizado
+- **Dependencias de Angular**: Actualización de versiones de desarrollo
+  - `@angular-devkit/build-angular` actualizado de `20.0.6` a `^20.3.8`
+  - Mejoras de performance y correcciones de bugs del toolchain de Angular
+
+- **Versión del Proyecto**: Incremento de versión semántico
+  - `version` actualizada de `0.11.2` a `0.12.0` en package.json
+  - `version` actualizada en environment.ts y environment.prod.ts
+  - `buildDate` actualizado a `2025-10-30` en ambos environments
+
+### 🎨 UI/UX
+- **Diseño Moderno y Profesional**: Nueva identidad visual para la landing page
+  - Uso consistente de Tailwind CSS en toda la página
+  - Esquema de colores corporativo con azul primario (#3B82F6)
+  - Iconografía SVG para servicios y aplicaciones
+  - Hover effects y transiciones suaves
+  - Cards con sombras y bordes redondeados
+  - Tipografía jerárquica clara y legible
+
+- **Experiencia de Usuario Mejorada**: Navegación intuitiva y accesible
+  - CTAs (Call-to-Action) prominentes y claros
+  - Scroll suave a secciones específicas con anchors
+  - Diseño responsive para mobile, tablet y desktop
+  - Acceso directo a aplicaciones desde landing page
+  - Breadcrumb navigation en JSON Viewer para volver al inicio
+
+### 🏗️ Arquitectura
+- **Standalone Components**: Aprovechamiento de Angular 19
+  - JSON Viewer implementado como standalone component
+  - Imports optimizados con solo CommonModule
+  - Mejor tree-shaking y bundle size reducido
+
+- **Lazy Loading**: Carga bajo demanda de componentes
+  - HomeComponent cargado dinámicamente en ruta raíz
+  - JsonViewerComponent cargado dinámicamente en `/json-viewer`
+  - Mejora en tiempo de carga inicial de la aplicación
+
+### 📱 Responsive Design
+- **Adaptabilidad Multi-dispositivo**: Diseño fluido en todos los tamaños
+  - Grid responsive de 1-3 columnas según breakpoints
+  - Navegación adaptativa con hamburger menu potencial
+  - Tipografía escalable (text-5xl → text-6xl en desktop)
+  - Padding y spacing ajustables por pantalla (px-4 sm:px-6 lg:px-8)
+
+### 🔧 Técnico
+- **Archivos Principales Agregados**:
+  - `src/app/modules/marketing/components/json-viewer/json-viewer.component.ts`: Componente principal del visor JSON
+  - `src/app/modules/marketing/components/json-viewer/json-viewer.component.html`: Template del visor
+  - `src/app/modules/marketing/components/json-viewer/json-viewer.component.css`: Estilos específicos del visor
+
+- **Archivos Principales Modificados**:
+  - `src/app/app.routes.ts`: Agregadas rutas para home y json-viewer
+  - `src/app/modules/marketing/components/home/home.component.ts`: Simplificación de imports
+  - `src/app/modules/marketing/components/home/home.component.html`: Rediseño completo del template
+  - `package.json`: Actualización de versión y dependencias
+  - `src/environments/environment.ts`: Versión y buildDate actualizados
+  - `src/environments/environment.prod.ts`: Versión y buildDate actualizados
+
+- **Patrones Implementados**:
+  - Component lifecycle hooks (OnInit, AfterViewInit, OnDestroy)
+  - Event listeners con cleanup apropiado
+  - DOM manipulation con referencias tipadas
+  - SVG manipulation para conexiones dinámicas
+  - Observable pattern para panel resizing
+  - Drag & drop implementation con mouse events
+
+### 📊 Funcionalidades del JSON Viewer
+- **Visualización Interactiva**: Sistema completo de diagrama de relaciones
+  - Parser JSON robusto con validación y manejo de errores
+  - Generación automática de nodos desde estructura JSON
+  - Layout automático con spacing calculado dinámicamente
+  - Colorización por tipo de dato (string, number, boolean, object, array)
+  - Contador de elementos para arrays y objetos
+
+- **Navegación y Zoom**: Controles intuitivos del workspace
+  - Zoom con rueda del mouse (sin modificadores)
+  - Scroll vertical con Ctrl + rueda
+  - Scroll horizontal con Shift + rueda
+  - Pan del workspace arrastrando el fondo
+  - Cursor cambia a "grab/grabbing" durante pan
+  - Botón de centrado para resetear vista
+
+- **Gestión de Paneles**: Interface adaptable a necesidades del usuario
+  - Panel izquierdo para entrada JSON (redimensionable 200-800px)
+  - Panel derecho para detalles de nodo (redimensionable 200-800px)
+  - Botones toggle para mostrar/ocultar paneles
+  - ResizeObserver para actualizar posiciones de botones
+  - Transiciones suaves en show/hide de paneles
+
+### 🎯 Casos de Uso
+- **Herramienta de Desarrollo**: Útil para desarrolladores y analistas
+  - Visualizar respuestas API complejas
+  - Entender estructura de datos JSON anidados
+  - Debugging de objetos con jerarquías profundas
+  - Documentación visual de modelos de datos
+  - Exploración interactiva de configuraciones JSON
+
+- **Marketing Corporativo**: Showcase de capacidades técnicas
+  - Demostración de habilidades en visualización de datos
+  - Portfolio de herramientas internas disponibles públicamente
+  - Punto de entrada para potenciales clientes
+  - Branding corporativo de Angema como empresa tecnológica
+
 ## [v.0.11.2] - 2025-07-29
 
 ### ✨ Agregado

@@ -11,8 +11,16 @@ import { firebaseConfig } from './config/firebase.config';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'app/login',
+    redirectTo: '',
     pathMatch: 'full'
+  },
+  {
+    path: '',
+    loadComponent: () => import('./modules/marketing/components/home/home.component').then(m => m.HomeComponent)
+  },
+  {
+    path: 'json-viewer',
+    loadComponent: () => import('./modules/marketing/components/json-viewer/json-viewer.component').then(m => m.JsonViewerComponent)
   },
   {
     path: 'app',
