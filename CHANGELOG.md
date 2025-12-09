@@ -5,6 +5,48 @@ Todos los cambios importantes de este proyecto serán documentados en este archi
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 y este proyecto adhiere al [Versionado Semántico](https://semver.org/spec/v2.0.0.html).
 
+## [v.0.12.1] - 2025-12-08
+
+### 🔒 Seguridad
+- **Corrección de Vulnerabilidades Críticas**: Actualización completa de Angular a versión LTS 20.3.15
+  - Corregidas 12 vulnerabilidades de seguridad (1 moderada, 11 altas) → 0 vulnerabilidades
+  - **Angular GHSA-58c5-g7wp-6w37**: XSRF Token Leakage via Protocol-Relative URLs en HTTP Client
+  - **Angular GHSA-v4hv-rgfq-gp49**: Stored XSS Vulnerability via SVG Animation, SVG URL y MathML Attributes
+  - **glob GHSA-5j98-mcp5-4vw2**: Command injection en CLI via -c/--cmd (versiones 10.2.0 - 10.4.5)
+  - **js-yaml GHSA-mh29-5h37-fv8m**: Prototype pollution in merge (<<) operator (versiones 4.0.0 - 4.1.0)
+  - **node-forge**: Múltiples vulnerabilidades ASN.1 (Unbounded Recursion, Validator Desynchronization, OID Integer Truncation)
+
+### 🔧 Actualizado
+- **Angular Framework**: Actualización mayor a versión LTS (Long Term Support)
+  - `@angular/core`: 20.0.6 → 20.3.15
+  - `@angular/common`: 20.0.6 → 20.3.15
+  - `@angular/compiler`: 20.0.6 → 20.3.15
+  - `@angular/forms`: 20.0.6 → 20.3.15
+  - `@angular/router`: 20.0.6 → 20.3.15
+  - `@angular/platform-browser`: 20.0.6 → 20.3.15
+  - `@angular/platform-browser-dynamic`: 20.0.6 → 20.3.15
+  - `@angular/animations`: 20.0.6 → 20.3.15
+  - `@angular/compiler-cli`: 20.0.6 → 20.3.15
+
+### ✨ Agregado
+- **Dependencias ZXing**: Agregadas librerías necesarias para barcode scanner
+  - `@zxing/browser`: Soporte para escaneo de códigos en navegador
+  - `@zxing/library`: Biblioteca core de ZXing para lectura de códigos de barras
+
+### 📊 Mejoras de Seguridad
+- **Estado de Vulnerabilidades**: 0 vulnerabilidades encontradas en audit
+- **Compatibilidad**: Migración a versión LTS garantiza soporte extendido y parches de seguridad
+- **Build Verificado**: Compilación exitosa con todas las actualizaciones aplicadas
+
+### 🏗️ Técnico
+- **Archivos Modificados**:
+  - `package.json`: Actualización de versiones de dependencias
+  - `package-lock.json`: Resolución de dependencias actualizada
+- **Estrategia de Actualización**:
+  - Aplicadas correcciones automáticas con `npm audit fix` para vulnerabilidades menores
+  - Actualización manual controlada de Angular usando `--legacy-peer-deps`
+  - Verificación de build completa antes de commit
+
 ## [v.0.12.0] - 2025-10-30
 
 ### ✨ Agregado
